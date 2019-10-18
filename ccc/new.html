@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>每日一族語</title>
+        <style>
+                .slider_container {
+            margin: 30px auto;
+            width: 400px;
+            height: 280px;
+            position: relative;
+            border: 20px solid;    
+            border-color: #fff;
+            border-bottom-width: 100px;
+            background-color: #f5f5f5;
+            box-shadow: #666 0 0 5px;
+        }
+        
+        .slider_container div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+            </style>
+                
+                
+</head>
+
+<body>
+        <br><h1>羽毛自動切換</h1></br>
+        <script type="text/javascript">
+            var chang_img = {
+            get_node: function(id){
+            return document.getElementById(id);
+            },
+            prepare_img: function(){
+            return ["maimao.png","mao.png"];
+            },
+            bg: function(id){
+            var img_num = this.prepare_img().length;
+            var i = Math.floor(img_num * Math.random(1)) ;
+            this.get_node(id).style.backgroundImage = 'url(' + this.prepare_img()[i] +')';
+            },
+            s:function(){
+            alert(this.prepare_img[1]);
+            }
+            }
+            window.onload = function(){
+            chang_img.bg("test");
+            }
+            </script>
+<div class="slider_container">
+	<div>
+		<img src="ami.png" alt="阿美族羽毛" width="200" height="100">
+		<span class="info">Image Description 1</span>
+	</div>
+	<div>
+		<img src="mao.png" alt="羽毛" width="200" height="100">
+		<span class="info">Image Description 2</span>
+    </div>
+    <div>
+		<img src="dawu.png" alt="達悟族羽毛" width="200" height="100">
+		<span class="info">Image Description 3</span>
+	</div>
+	
+</div>
+</body>
+</html>
+
+
